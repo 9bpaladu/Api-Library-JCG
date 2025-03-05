@@ -5,8 +5,6 @@ import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.http.Header;
 import io.restassured.http.Headers;
-import io.restassured.path.xml.XmlPath;
-import io.restassured.path.xml.element.Node;
 import io.restassured.specification.RequestSpecification;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.io.FileUtils;
@@ -21,8 +19,6 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 /**
@@ -193,36 +189,6 @@ public class RAWrapper {
         Headers header = new Headers(list);
         return header;
     }
-
-//    public static Headers getHeaders_New(Object testdata, String dataFileName, String testCaseName) throws Exception {
-//        List<Header> list = new ArrayList<>();
-//        if (testdata instanceof java.lang.String) {
-//            String headers = ((String) testdata).substring(((String) testdata).indexOf("<Headers>"), ((String) testdata).indexOf("</Headers>") + 10);
-//            System.out.println("headers" + headers);
-//            XmlPath xpath = new XmlPath(headers);
-//            NodeBase np = xpath.get("Headers");
-//            for (int i = 0; i < np.children().size(); i++) {
-//                Node n = np.get(i);
-//                String key = n.name();
-//                String val = n.value();
-//                val = APIlib.parseData(val, dataFileName, testCaseName);
-//                list.add(new Header(key, val));
-//            }
-//        } else {
-//            JSONObject jstr = parseJson(testdata, "Headers");
-//            Set<String> hname = jstr.keySet();
-//            Iterator<String> it = hname.iterator();
-//            String val = null;
-//            while (it.hasNext()) {
-//                String str = it.next();
-//                val = jstr.get(str).toString();
-//                val = APIlib.parseData(val, dataFileName, testCaseName);
-//                list.add(new Header(str, val));
-//            }
-//        }
-//        Headers header = new Headers(list);
-//        return header;
-//    }
 
 
 

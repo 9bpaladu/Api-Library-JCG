@@ -76,4 +76,13 @@ public class ApiStepDef {
         apiLibrary.ExtractAndStoreHeader(key,key);
     }
 
+    @And("I validate response {string} matches {string}")
+    public void validateResponse(String expected,String actual) throws Throwable {
+        apiLibrary.ValidateResponse(expected,actual);
+    }
+    @And("I validate response {string} error message {string}")
+    public void validateResponseError(String propname,String error) throws Throwable {
+        apiLibrary.ValidateResponseBodyForErrorMessage(propname,error);
+    }
+
 }
