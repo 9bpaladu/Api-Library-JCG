@@ -1,0 +1,59 @@
+plugins {
+    id 'java'
+//    id 'com.github.johnrengelman.shadow' version '5.0.0' // Or the latest version
+}
+
+group 'com.jcg.apilibrary'
+version '1.0-SNAPSHOT'
+
+//sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+
+dependencies {
+    implementation group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
+    implementation group: 'junit', name: 'junit', version: '4.13.2'
+    implementation group: 'io.rest-assured', name: 'rest-assured', version: '5.5.0'
+    implementation group: 'io.rest-assured', name: 'json-path', version: '5.5.0'
+    implementation group: 'io.rest-assured', name: 'xml-path', version: '5.5.0'
+    implementation group: 'io.rest-assured', name: 'json-schema-validator', version: '5.5.0'
+    implementation group: 'org.hamcrest', name: 'hamcrest', version: '3.0'
+    implementation group: 'org.apache.groovy', name: 'groovy', version: '4.0.24'
+    implementation group: 'org.ccil.cowan.tagsoup', name: 'tagsoup', version: '1.2.1'
+    implementation group: 'org.apache.groovy', name: 'groovy-xml', version: '4.0.24'
+    implementation group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.14'
+    implementation group: 'org.apache.httpcomponents', name: 'httpmime', version: '4.5.14'
+//    implementation group: 'org.testng', name: 'testng', version: '7.11.0'
+    implementation 'io.cucumber:cucumber-java:7.21.1'
+    implementation 'io.cucumber:cucumber-testng:7.21.1'
+    implementation group: 'io.cucumber', name: 'cucumber-picocontainer', version: '7.21.1'
+    implementation group: 'tech.grasshopper', name: 'extentreports-cucumber7-adapter', version: '1.14.0'
+    implementation 'org.apache.logging.log4j:log4j-core:2.16.0'
+    implementation 'org.apache.logging.log4j:log4j-api:2.16.0'
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.17.0'
+    implementation group: 'commons-collections', name: 'commons-collections', version: '3.2.2'
+    implementation group: 'commons-io', name: 'commons-io', version: '2.18.0'
+    implementation group: 'org.skyscreamer', name: 'jsonassert', version: '1.5.3'
+    implementation ( 'com.aventstack:extentreports:5.1.2'){
+        exclude (group: 'log4j', module: 'log4j')
+    }
+}
+
+//jar {
+//    manifest {
+//        attributes "Main-Class": "api-library-jcg"
+//    }
+//    from {
+//        configurations.compile.findAll { file ->
+//            file.name.contains("cvtap-encryption-library")
+//        }.sort { it.name }
+//                .collect { file ->
+//                    logger.info("Including file: ${file.name}")
+//                    file.isDirectory() ? file : zipTree(file)
+//                }
+//  }
+//}
