@@ -63,8 +63,13 @@ public class ApiStepDef {
         apiLibrary.CheckStatusCode();
     }
     @And("I invoke api {string} {string} {string}")
-    public void verifyStatusCode(String method, String url, String payloadFile) throws Throwable {
+    public void InvokeAPI(String method, String url, String payloadFile) throws Throwable {
         apiLibrary.invokeAPI(method, url, payloadFile);
+    }
+
+    @And("I invoke api for basic auth {string} {string} {string}")
+    public void InvokeAPIForBasicAuth(String method, String url, String payloadFile,String username,String password) throws Throwable {
+        apiLibrary.invokeAPIBasicAuth(method,url,payloadFile,username,password);
     }
 
     @And("I extract and store {string} from response")
